@@ -8,22 +8,22 @@ centralizar estudos de n8n e agentes de IA
 
 # Step 2: Create docker-compose.yml
     services:
-  n8n:
-    image: n8nio/n8n:latest
-    container_name: n8n
-    restart: always
-    ports:
-      - "5678:5678"
-    environment:
-      - N8N_BASIC_AUTH_ACTIVE=true
-      - N8N_BASIC_AUTH_USER=user
-      - N8N_BASIC_AUTH_PASSWORD=password
-      - N8N_HOST=localhost
-      - N8N_PORT=5678
-      - N8N_PROTOCOL=http
-      - NODE_ENV=production
-    volumes:
-      - ~/.n8n:/home/node/.n8n
+      n8n:
+        image: n8nio/n8n:latest
+        container_name: n8n
+        restart: always
+        ports:
+          - "5678:5678"
+        environment:
+          - N8N_BASIC_AUTH_ACTIVE=true
+          - N8N_BASIC_AUTH_USER=user
+          - N8N_BASIC_AUTH_PASSWORD=password
+          - N8N_HOST=localhost
+          - N8N_PORT=5678
+          - N8N_PROTOCOL=http
+          - NODE_ENV=production
+        volumes:
+          - ~/.n8n:/home/node/.n8n
     
 # Step 3: Prepare Volume Directory
     mkdir -p ~/.n8n
